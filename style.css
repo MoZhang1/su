@@ -1,0 +1,30 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fdf6f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+}
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 12px 0;
+}
+.mode-select {
+    margin-bottom: 16px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+}

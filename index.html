@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏老师的石头剪刀布</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>苏老师今天要做什么决定？</h1>
+        <input type="text" id="decisionInput" placeholder="如果你赢了你就去..." />
+        <div class="mode-select">
+            <label><input type="radio" name="mode" value="1" checked> 一局一胜</label>
+            <label><input type="radio" name="mode" value="3"> 三局两胜</label>
+        </div>
+        <button id="startBtn">开始石头剪刀布</button>
+    </div>
+
+    <script>
+        document.getElementById("startBtn").onclick = function() {
+            const decision = document.getElementById("decisionInput").value.trim();
+            const mode = document.querySelector('input[name="mode"]:checked').value;
+            if (!decision) {
+                alert("请先填写决定内容！");
+                return;
+            }
+            localStorage.setItem("decision", decision);
+            localStorage.setItem("mode", mode);
+            window.location.href = "game.html";
+        }
+    </script>
+</body>
+</html>

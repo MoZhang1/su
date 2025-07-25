@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>苏老师的石头剪刀布</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home">
+    <h1>苏老师的石头剪刀布</h1>
+    <label for="decision">请输入要决定的内容：</label>
+    <input type="text" id="decision" placeholder="比如：吃什么、去哪里...">
+    <div class="mode-select">
+      <label><input type="radio" name="mode" value="1" checked> 一局一胜</label>
+      <label><input type="radio" name="mode" value="3"> 三局两胜</label>
+    </div>
+    <button onclick="startGame()">开始石头剪刀布</button>
+  </div>
+
+  <div id="game" style="display:none">
+    <h2 id="round-info">第一局</h2>
+    <p id="decision-text"></p>
+    <div class="avatars">
+      <div class="player">
+        <img id="sulaoshi-img" src="assets/sulaoshi.png" alt="苏老师">
+        <p>苏老师</p>
+      </div>
+      <div class="player">
+        <img id="zhangzimo-img" src="assets/zhangzimo.png" alt="张子墨">
+        <p>张子墨</p>
+      </div>
+    </div>
+    <p>请选择你的出拳：</p>
+    <div class="choices">
+      <button onclick="play('rock')">✊ 石头</button>
+      <button onclick="play('scissors')">✌️ 剪刀</button>
+      <button onclick="play('paper')">✋ 布</button>
+    </div>
+    <p id="battle-result"></p>
+  </div>
+
+  <div id="result" style="display:none">
+    <h2>苏老师胜利！</h2>
+    <p id="final-decision"></p>
+    <button onclick="location.reload()">再来一局</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>苏老师的石头剪刀布</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="start-screen">
+      <h1>苏老师今天要做什么决定？</h1>
+      <input type="text" id="decision" placeholder="如果你赢了你就..." />
+      <div>
+        <label><input type="radio" name="mode" value="1" checked /> 一局一胜</label>
+        <label><input type="radio" name="mode" value="3" /> 三局两胜</label>
+      </div>
+      <button onclick="startGame()">开始石头剪刀布</button>
+    </div>
+
+    <div id="game-screen" style="display:none">
+      <div class="avatars">
+        <div class="avatar">
+          <img src="su.png" alt="苏老师" />
+          <p>苏老师</p>
+        </div>
+        <div class="avatar">
+          <img src="zm.png" alt="张子墨" />
+          <p>张子墨</p>
+        </div>
+      </div>
+      <div class="result" id="round-result"></div>
+      <div class="choices">
+        <button onclick="play('✊')">✊ 石头</button>
+        <button onclick="play('✌')">✌ 剪刀</button>
+        <button onclick="play('✋')">✋ 布</button>
+      </div>
+    </div>
+
+    <div id="end-screen" style="display:none">
+      <h2 id="end-result">苏老师赢了！</h2>
+      <button onclick="resetGame()">再来一局</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
